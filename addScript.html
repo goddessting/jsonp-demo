@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>addScript</title>
+    <script src="http://static.runoob.com/assets/jquery/2.0.3/jquery.min.js"></script>
+    <script>
+        function showData(data) {
+            $('#data').text(JSON.stringify(data));
+        }
+        function loadData() {
+           var script = document.createElement("script");
+           script.setAttribute("type","text/javaScript");
+           script.src = 'http://localhost:3001/jsonp-data?callback=showData';
+           document.body.appendChild(script);
+        }
+    </script>
+</head>
+<body>
+<div>
+    <button onclick="loadData()">点击获取</button>
+</div>
+<div id="data"></div>
+</body>
+</html>

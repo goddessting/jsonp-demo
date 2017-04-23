@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>b</title>
+    <script src="http://static.runoob.com/assets/jquery/2.0.3/jquery.min.js"></script>
+    <script>
+        function loadData() {
+            $.ajax({
+                url: 'http://localhost:3001/json-data',
+                type: "GET",
+                dataType: 'json',
+                success: function (data) {
+                    $("#data").text(JSON.stringify(data));
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<div>
+    <button onclick="loadData()">点击获取</button>
+</div>
+<div id="data"></div>
+</body>
+</html>
+
